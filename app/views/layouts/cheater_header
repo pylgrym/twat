@@ -1,0 +1,4 @@
+ <!-- cheating until I get menu to work -->
+                <li> <%= link_to "ZProfile", current_user %> </li>
+                <li> <%= link_to "ZSettings", edit_user_path(current_user) %> </li>
+                <li> <%= link_to "ZSign out", signout_path, method: "delete" %> </li>

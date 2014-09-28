@@ -1,0 +1,20 @@
+<!-- p400 added -->
+
+<% provide(:title, 'All users') %>
+
+<h1>All users</h1>
+
+<%= will_paginate %>   <!-- p408 added -->
+
+<ul class="users">
+
+
+	<% @users.each do |user| %>
+	  <%= render user %>   <!-- p411 -->
+      <!-- code in _user.html.erb partial used to be inline here. -->
+	<% end %>
+
+</ul>
+
+<%= will_paginate %>  <!-- p408 added -->
+

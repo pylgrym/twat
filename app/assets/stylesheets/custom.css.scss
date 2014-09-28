@@ -1,0 +1,373 @@
+$light-orange: #ffac00;
+$navbar-default-bg: #99e; /* #fe8$light-orange;  */ /* #312312; */
+$navbar-default-color: #b93; /* $light-orange; */
+
+/* jg: Hm, we should have 'navbar-dropdown', to avoid this hitting all drop-downs! */
+$dropdown-bg: lighten($navbar-default-bg, 10%);
+
+/* these tricks: 
+http://getbootstrap.com/customize/#less-variables
+*/
+
+/* default would be black- #000: */
+$total-bs: #002;
+$gray-darker:  lighten($total-bs, 13.5%);
+$gray-dark:    lighten($total-bs, 20%);
+$gray:         lighten($total-bs, 33.5%);
+$gray-light:   lighten($total-bs, 46.7%);
+$gray-lighter: lighten($total-bs, 93.5%);
+
+/* font-family: 'Shadows Into Light', cursive; 
+  $font-family-base: 'Shadows Into Light', cursive;
+  @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+  Arimo, Lobster
+*/
+@import url(http://fonts.googleapis.com/css?family=Lora);
+$font-family-base: 'Lora', cursive;
+
+.thendoit {
+  line-height: 1.2;
+}
+
+/* green focus highlight! */
+$input-border-focus: #0f0;
+
+@import 'bootstrap-sprockets'; /* solved glyph-icons issue! */ 
+@import "bootstrap";
+@import "bootstrap/theme";
+
+
+/* @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light|Titillium+Web|Noto+Sans|Indie+Flower|Cabin|Muli|Playfair+Display|Libre+Baskerville|Rokkitt|Josefin+Sans|Bree+Serif|Gloria+Hallelujah|Pacifico);
+*/
+
+
+body {
+  background-color: #acf; /* f0f0ff;   */
+}
+
+
+/* p.274, debug-params CSS */
+/* mixins, variables, etc. */
+/* dollar was at-sign? */
+$grayMediumLight: #eaeaea;
+
+/* JG: I think it's deprecated in newer versions-
+ can I assign variables to each other? */
+$grayLighter: eee;
+$grayLight: $gray-light;
+$blue: 00f;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* end p274-debug-params.*/
+
+
+
+
+/* universal (p.177) */
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+/* end of p.177-178 original parts. */
+
+
+
+
+/* typography (p.179-p180) */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  /* color: red; */
+}
+
+h2 {
+  font-size: 1.7em; /* was JG-value: 1.2 */
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+  /* was JG: color: blue; */
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  /* was JG: color: purple; */
+}
+
+/* End of p.179-180 styles.*/
+
+
+/* (p.181 header */
+/* JG: I liked the default look/before better, but it makes header-bar narrower, which 
+I assume is good and intended/necessary.. (it also alignes left/right part.)*/
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 2.9em;
+  color: #60a;
+  taxt-transform: uppercase;
+  font-variant: small-caps;
+  letter-spacing: -4px;
+  padding-top: 6px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+#logo2 {
+  color: #60a;  
+  line-height: 0em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50px;
+  font-size: 1.4em;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/*end p.181 part.*/
+
+
+/* p.185 footer */
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;	 
+}
+
+footer a {
+	color: #555;
+}
+footer a:hover {
+	color: #222;
+}
+footer small {
+	float: left;
+}
+footer ul {
+	float: right;
+	list-style: none;
+}
+footer ul li {
+	float: left;
+	margin-left: 10px;
+}
+/* end p.185 footer CSS */
+
+
+
+/* p274 debug-dump CSS second part: */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;  
+  /* background-color: lightgreen; */
+}
+/* end p274 second part debug-dump. */
+
+
+
+/* p290 sidebar ( dot in padding should be dash) */
+aside {
+  background-color: lightyellow; /* Jakob p290, to see what/where aside is.. */
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;      
+    }
+    h1 {
+      font-size: 1.6em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+/* end p290 sidebar-CSS */
+
+
+
+/* p300 forms */
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 15px;
+  @include box_sizing;
+} /* end p300 form CSS. */
+
+
+
+/* p311 error CSS */
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none; /* IE no bullets. */
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;  /* what is this extend-stuff ? */
+}
+/* end p311 error CSS */
+
+
+/* p400, users index: */
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+} /* end p400 user-index CSS. */
+
+
+/* p452 microposts: */
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  } 
+}
+
+/* tricks to make micropost form stay on one line: */
+.mylefter  { float: left; display: inline; }
+.myinliner { float: right; display: inline; }
+
+
+
+.content { display: inline; } /* was: block */
+.timestamp { color: $grayLight; }
+.gravatar { float: left; margin-right: 10px; }
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }  
+}
+/* end p452 microposts.*/
+
+
+/* p510, sidebar  */
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $grayLighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;    
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
+/* p510 end sidebar CSS. */
+
+
+
+
+/* both of these fail to change color of 'jumbotron:'
+   div { background-color: pink; }  
+   .container { background-color: pink; }
+*/
+
+.funnycol { background-color: lightblue; }
+
+
+
+.myform, .mydialog {
+  max-width: 300px;
+  margin: auto; 
+}
+
+
+.user_name { width: 190px; display: inline-block;}
+.user_id { width: 90px; display: inline-block;}
+.user_created_at { width: 190px; display: inline-block; notbackground-color: lightyellow; }
+.user_updated_at { width: 190px; display: inline-block;}
+
+.my-th th { background-color: #eee; }
+/* #my-th th { background-color: black; } */
+.nottd {
+  font-family: 'Shadows Into Light', cursive;
+}
+

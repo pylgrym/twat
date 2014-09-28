@@ -1,0 +1,25 @@
+<!-- p463 -->
+
+<%= form_for(@micropost, html: {class: "form-inline"} ) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="form-group">
+
+    <div class="col-sm-offset-0 col-sm-1">
+        <!-- text_field WAS text_area, but it stops submit from auto-comitting.. -->
+        <%= f.text_field :content, 
+          placeholder: "Compose new micropost...", 
+          autofocus: true, 
+          class: "form-control" %>
+        <!-- form-control gives e.g. blue-focus-border -->
+    </div>
+
+    <!-- fixme, clearly I don't get what the col bla bla does -->
+    <div class="col-sm-offset-5 col-sm-5">
+        <%= f.submit "Post", class: "btn btn-large btn-primary form-control" %>
+    </div>
+
+  </div>
+
+<% end %>

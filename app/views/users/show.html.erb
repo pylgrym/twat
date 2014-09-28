@@ -1,0 +1,47 @@
+
+
+
+<% provide(:title, @user.name) %> <!-- p.285 -->
+
+<div class="row">  <!-- P290 added 1/2 -->
+	<aside class="span4">
+		<section>
+
+      <h1> (aside)
+      	<%= gravatar_for @user %>  <!-- p287 -->
+      	<%= @user.name %> 
+      </h1>
+
+    </section> 
+
+    <!-- p513 added 1/2: -->
+    <section> <%= render 'shared/stats' %> </section>
+
+  </aside>  <!-- P290 added 2/2 -->
+
+  <!-- p447 added -->
+  <div class="span8 funnycol">
+
+    
+    <%= render 'follow_form' if signed_in? %>  <!-- <- p513 added 2/2: -->
+
+  	<% if @user.microposts.any? %>
+  		<h3>Microposts (<%= @user.microposts.count %>)</h3>
+
+  		<table class="table microposts table-bordered table-hover table-condensed table-responsive table-striped">
+  			<%= render @microposts %>
+  	    <%= will_paginate @microposts %>
+      </table>
+
+    <% else %>
+      <p> <i> (This user doesn't have any posts yet.) </i> </p>
+    <% end %> 
+  </div> <!-- p447 end -->
+
+</div>
+
+
+
+
+<!-- p.280 -->
+<%= @user.name %>, <%= @user.email %> </code>

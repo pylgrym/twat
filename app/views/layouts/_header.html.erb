@@ -1,0 +1,84 @@
+<!-- p.184 -->
+
+<!-- I don't like navbar-fixed-top, because it fails to scroll/scrolls horribly. -->
+<nav class="navbar navbar-default navbar-fixed-top">  
+  <!-- navbar-fixed-top navbar-inverse , from where? -->
+    <div class="container-fluid">
+
+      <nav class="navbar-header">
+        <span class="mybrand" id="logo2">
+        <div>:3000</div> 
+        <div style="notfont-variant: small-caps;">rails</div> 
+        <div>minor</div>   
+        </span>          
+      </nav>
+      <!-- MiTu SMPLe 3000 -->
+      <!-- <%= link_to "rails :3000 minor", root_path, id: "logo" %> -->
+
+      <div "collapse navbar-collapse">  <!-- .dropdown-menu-right -->
+        <ul class="nav navbar-nav pull-right">
+
+
+          <li class="active">
+            <%= link_to( 
+            '<span class="glyphicon glyphicon-home"></span> Home'.html_safe(),    root_path) %>
+          </li>
+
+          <li>  <!-- the right way to glyphicon with link_to. -->
+            <%= link_to root_path do %>
+              <span class="glyphicon glyphicon-euro"></span> euro
+            <% end %>
+          </li>
+
+
+          <li>
+            <%= link_to('<span class="glyphicon glyphicon-eye-open"></span> Help'.html_safe(),help_path) %>
+          </li>
+
+
+
+          <!-- p357-358 added -->
+          <% if signed_in? %>
+
+            <!-- p401, users_path inserted below: -->
+            <li> <%= link_to('<span class="glyphicon glyphicon-list-alt"></span> Index'.html_safe(), users_path)  %>  </li>
+
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user"></span> Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">  <!--  role="menu"-->
+                <li> <%= link_to "Profile", current_user %> </li>
+                <li> <%= link_to "Settings", edit_user_path(current_user) %> </li> <!-- p380 -->
+                <li class="divider"> </li>
+                <li>
+          <form class="navbar-form">
+                  <%= link_to "Sign out", signout_path, method: "delete",
+                    class: "navbar-btn btn btn-sm btn-success"
+                  %>
+                  <!-- (delete req 'faked' using JS) -->
+          </form>
+                </li>
+              </ul>
+            </li>
+          <% else %>  
+            <!-- ended p357 addition here, original p184(?) stuff after here: -->
+
+            <!-- signin_path also added p357 -->
+            <li>
+              <span>
+                <!-- (so)- _p169 -->
+              <%= link_to('<span class="glyphicon glyphicon-off"></span> Sign in'.html_safe(), signin_path,
+                 class: "navbar-btn btn  btn-warning") 
+               %>
+             </span>
+
+            </li>
+
+
+          <% end %>
+
+        </ul>
+      </div>
+    </div>
+</nav>

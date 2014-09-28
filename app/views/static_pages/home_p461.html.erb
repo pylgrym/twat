@@ -1,0 +1,32 @@
+<div class="center hero-unit">
+
+<!-- was p113 branch of original from p96-->
+<% provide(:title, 'HomeTitle') %>
+
+<h1> (p.173) Welcome to the Sample App</h1>
+<h2>
+	 (p.173) This is the HOME page for the 
+    <a href="http://railstutorial.org/"> Ruby on Rails Tutorial</a>
+    sample application.
+</h2>
+
+  <!-- signup_path replaces '#' on p.215-->
+  <%= link_to "(p.173)Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+</div>
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+
+
+<p>(Older stuff, before p.173:)</p>
+<h1> (p.96) Sample App </h1>
+<h2> (p.109)Inserted title with <em>yield:</em> <%= yield(:title) %> </h2>
+<h2> &lt;% provide(:title, 'someValue') %&gt;</h2>
+<h2> &lt;%= yield(:title) %&gt;  (Embedded RuBy,ERB)</h2>
+<p>
+	This is the HOME page for the 
+<a href="http://railstutorial.org/"> Ruby on Rails Tutorial</a>
+sample application.
+</p>
+
+<h1>StaticPages#home</h1>
+<p>Find me in app/views/static_pages/home.html.erb</p>
+

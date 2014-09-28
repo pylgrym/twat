@@ -1,0 +1,25 @@
+<!-- p412 added -->
+
+
+
+
+<tr>
+  <!-- doesn't work -  , size: 52 -->
+  <td> <%= gravatar_for user, size: 22 %> </td>
+
+	<td> <span class="user_name"> <%= link_to user.name, user %>  </span> </td>
+      
+  <td> <span class="user_id">   <%= user.id %>                  </span> </td>
+  <td> <span class="user_created_at">    <%= user.created_at %> </span> </td>
+  <td> <span class="user_updated_at">    <%= user.updated_at %> </span> </td>
+
+  <td>
+    <!-- p419 added -->
+    <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user,method: :delete, confirm: "You sure?" %>
+    <% end %>
+  </td>
+
+</tr>
+
+

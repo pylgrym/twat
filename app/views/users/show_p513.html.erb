@@ -1,0 +1,37 @@
+
+
+
+<% provide(:title, @user.name) %> <!-- p.285 -->
+
+<div class="row">  <!-- P290 added 1/2 -->
+	<aside class="span4">
+		<section>
+
+      <h1> 
+      	<%= gravatar_for @user %>  <!-- p287 -->
+      	<%= @user.name %> 
+      </h1>
+
+    </section> 
+  </aside>  <!-- P290 added 2/2 -->
+
+  <!-- p447 added -->
+  <div class="span8 funnycol">
+  	<% if @user.microposts.any? %>
+  		<h3>Microposts (<%= @user.microposts.count %>)</h3>
+  		<ol class="microposts">
+  			<%= render @microposts %>
+  	  </ol>
+  	  <%= will_paginate @microposts %>
+    <% else %>
+      <p> <i> (This user doesn't have any posts yet.) </i> </p>
+    <% end %> 
+  </div> <!-- p447 end -->
+
+</div>
+
+
+
+
+<!-- p.280 -->
+<%= @user.name %>, <%= @user.email %> </code>

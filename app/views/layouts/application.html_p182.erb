@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %>-SampleApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- this optional script helps older IE's handle HTML5: -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+	
+<!-- I don't like navbar-fixed-top, because it fails to scroll/scrolls horribly. -->
+<header class="navbar navbar-fixed-top">  <!-- navbar-fixed-top navbar-inverse , from where? -->
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to "sample app_p169", '#', id: "logo" %>
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "Home_p169",    '#' %></li>
+              <li><%= link_to "Help_p169",    '#' %></li>
+              <li><%= link_to "Sign in_p169", '#' %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+</header>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+<header><p> <%= yield(:title) %> (header part from app/views/layouts/application.html.erb)</p> </header>
+
+</body>
+</html>

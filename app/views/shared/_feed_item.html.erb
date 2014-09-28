@@ -1,0 +1,22 @@
+<!-- p472 -->
+
+<li id="<%= feed_item.id %>"> f-i
+  <!--
+  <%= link_to gravatar_for(feed_item.user, size:16), feed_item.user %>
+  <span class="user">
+    <%= link_to feed_item.user.name, feed_item.user %>
+  </span>
+  -->
+  <span class="content">F-E:<%= feed_item.content %></span>
+  <span class="timestamp">
+     Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+  </span>
+
+  <!-- p476 added -->
+  <% if current_user?(feed_item.user) %>
+  <%= link_to "delete", feed_item, method: :delete,
+                                  confirm: "You sure?",
+                                  title: feed_item.content %>
+  <% end %>
+  
+</li>

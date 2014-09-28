@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %>-SampleApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>  
+  <%= render 'layouts/shim' %>
+
+</head>
+
+<body>
+
+<!-- P.183: -->
+<%= render 'layouts/header' %>	
+
+<div class="container">
+  <%= yield %>
+</div>
+
+<!-- P.185: -->
+<%= render 'layouts/footer' %>
+
+</body>
+</html>

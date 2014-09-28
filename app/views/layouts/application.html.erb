@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %>-SampleApp</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>  
+  <%= render 'layouts/shim' %>
+
+</head>
+
+<body>
+
+<!-- P.183: -->
+<%= render 'layouts/header' %>	
+
+
+
+
+<div class="container">
+
+  <!-- p316 added -->
+  <% flash.each do | key,  value| %>
+    <div class="alert alert-<%= key %>">  <%= value %>  </div>
+  <% end %>
+
+  <%= yield %>
+
+  <!-- P.185: -->
+  <%= render 'layouts/footer' %>
+
+  <!-- p274, adding debug-output at bottom: -->
+  <%= debug(params) if Rails.env.development? %>
+
+</div>
+
+
+</body>
+</html>
