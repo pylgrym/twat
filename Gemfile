@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.3'
 #gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'bcrypt', '~> 3.1.7'
 
@@ -11,7 +11,7 @@ gem 'bootstrap-sass', '3.2.0.2'
 #gem 'bcrypt-ruby', '~> 3.0.1', platforms: "ruby"
 #gem 'bcrypt', '~> 3.1.7', platforms: "ruby"
 
-gem 'will_paginate', '3.0.3'              # p405 added.
+gem 'will_paginate', '3.0.5'              # p405 added.
 gem 'bootstrap-will_paginate', '0.0.6'    # p405 added.
 
 group :development, :test do
